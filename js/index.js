@@ -122,19 +122,19 @@ window.onload = function(){
             {
               label: "Innovador",
               fill: true,
-              backgroundColor: "#ccccff8a",
+              backgroundColor: "rgba(204, 204, 255, 0.5)",
               data: [33.33,33.33,33.33,33.33,33.33]
             },
             {
               label: "Integrador",
               fill: true,
-              backgroundColor: "#d8d8ff8a",
+              backgroundColor: "rgba(216, 216, 255, 0.5)",
               data: [66.66,66.66,66.66,66.66,66.66]
             },
             {
               label: "Explorador",
               fill: true,
-              backgroundColor: "#e5e5ff8a",
+              backgroundColor: "rgba(229, 229, 255, 0.5)",
               data: [100,100,100,100,100]
             }
 

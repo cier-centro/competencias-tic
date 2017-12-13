@@ -4,3 +4,35 @@ h1 {
 .btn-info {
     margin-bottom: 50px;
 }
+/*.row {
+    background-color: green !important;
+    -webkit-print-color-adjust: exact;
+}
+.canvas-container {
+    background-color: blue !important;
+    -webkit-print-color-adjust: exact;
+}*/
+@media print and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    .canvas-container {
+        padding: 0 !important;
+        width: 65% !important;
+        margin: auto;
+    }
+}
+@media print {
+    .canvas-container {
+        padding: 0 150% 0 15%;
+    }
+}
+@media (min-width: 768px) {
+    .canvas-container {
+        width: 60%;
+        margin: auto;
+    }
+}
+@media (max-width: 767px) {
+    .canvas-container {
+        width: 90%;
+        margin: auto;
+    }
+}
