@@ -2,7 +2,7 @@ window.onload = function(){
 
     console.log(getUrlParameter("tec"))
     var teacherData = {
-      name: getUrlParameter("name"),
+      name: getUrlParameter("name")||"SIN NOMBRE",
       results: [getUrlParameter("tec"),
                 getUrlParameter("ped"),
                 getUrlParameter("com"),
@@ -27,7 +27,7 @@ window.onload = function(){
         sParameterName = sURLVariables[i].split('=');
 
         if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
+            return sParameterName[1];
         }
     }
     return 0;
