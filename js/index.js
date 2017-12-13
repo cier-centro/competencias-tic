@@ -102,7 +102,7 @@ window.onload = function(){
       return label;
     }
     function getCompetenceLevel(score) {
-        return ((score >= 0) && (score < 100/3))? competenceLevelLabels[0]: ((score >= 100/3) && (score < 200/3))? competenceLevelLabels[1] : ((score >= 200/3) && (score <= 100))? competenceLevelLabels[2] : "Fuera de Rango";
+        return ((score >= 0) && (score <= 18))? competenceLevelLabels[2]: ((score > 18 ) && (score <= 30))? competenceLevelLabels[1] : ((score >= 30) && (score <= 36))? competenceLevelLabels[0] : "Fuera de Rango";
     }
     function createChart() {
       return new Chart(graphicContainer, {
@@ -120,22 +120,22 @@ window.onload = function(){
               data: teacherData.results
             },
             {
-              label: "Innovador",
+              label: "Explorador",
               fill: true,
               backgroundColor: "rgba(204, 204, 255, 0.5)",
-              data: [33.33,33.33,33.33,33.33,33.33]
+              data: [18,18,18,18,18]
             },
             {
               label: "Integrador",
               fill: true,
               backgroundColor: "rgba(216, 216, 255, 0.5)",
-              data: [66.66,66.66,66.66,66.66,66.66]
+              data: [30,30,30,30,30]
             },
             {
-              label: "Explorador",
+              label: "Innovador",
               fill: true,
               backgroundColor: "rgba(229, 229, 255, 0.5)",
-              data: [100,100,100,100,100]
+              data: [36,36,36,36,36]
             }
 
           ]
@@ -143,8 +143,8 @@ window.onload = function(){
         options: {
           scale: {
               ticks: {
-                  suggestedMin: 0,
-                  suggestedMax: 100
+                  min: 0,
+                  max: 36
               }
           },
           title: {
