@@ -1,7 +1,13 @@
 window.onload = function(){
+
+    console.log(getUrlParameter("tec"))
     var teacherData = {
-      name: "Samuel López",
-      results: [30,46,75,24,10]
+      name: getUrlParameter("name"),
+      results: [getUrlParameter("tec"),
+                getUrlParameter("ped"),
+                getUrlParameter("com"),
+                getUrlParameter("ges"),
+                getUrlParameter("inv")]
     }
     var tableLabels = ["Competencia", "Nivel", "Valor numérico"];
     var competencesLabels = ["Tecnológica", "Pedagógica", "Comunicativa", "Gestión", "Investigativa"];
@@ -10,6 +16,22 @@ window.onload = function(){
     var myRadarChart = createChart();
     putTeacherName();
     createTeacherTable();
+
+    function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+    return 0;
+    };
     function putTeacherName() {
         var teacherLabel = document.getElementById("teacher-name");
         teacherLabel.appendChild(document.createTextNode("Docente " + teacherData.name));
