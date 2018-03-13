@@ -11,12 +11,22 @@
   <script src="js/index.js"></script>
 </head>
 <body>
+    <div class="header">
+      <div class="jumbotron">
+        <span class="glyphicon glyphicon-file"></span>
+        <div>
+            <h1>Encuesta</h1>
+            <p>Instrumento Competencias TIC</p>
+        </div>
+      </div>
+    </div>
     <div class="container">
-        <h1>Encuesta</h1>
         <div class="row">
-           <iframe class="form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSckfMr2zjvGo08e9pPAE1iZ8vQnQc1poZPXRIS6oNIt-an4eA/viewform">
+           <iframe class="form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSckfMr2zjvGo08e9pPAE1iZ8vQnQc1poZPXRIS6oNIt-an4eA/viewform?embedded=true" onload="resizeIframe(this)">
            </iframe>
         </div>
+    </div>
+    <div class="footer">
     </div>
 </body>
 </html>
