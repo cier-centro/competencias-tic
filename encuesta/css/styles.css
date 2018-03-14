@@ -12,10 +12,15 @@
 .jumbotron {
     padding-left: 10vw;
     padding-right: 10vw;
-    display: flex;
-    align-items: center;
     margin: 0;
     height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jumbotron .left-section {
+    display: flex;
+    align-items: center;
 }
 .jumbotron .glyphicon-file {
     font-size: 80px;
@@ -27,6 +32,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.btn-help {
+    padding: 5px;
+}
+.btn-help .glyphicon-question-sign {
+    font-size: 32px;
 }
 @media (min-width: 768px) {
     .footer img {
