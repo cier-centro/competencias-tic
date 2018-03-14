@@ -6,7 +6,7 @@
     margin: 0;
 }
 .container-fluid {
-    height: 55vh;
+    height: 70vh;
     padding: 0;
 }
 .jumbotron {
@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     margin: 0;
-    height: 25vh;
+    height: 15vh;
 }
 .jumbotron .glyphicon-file {
     font-size: 80px;
@@ -23,5 +23,28 @@
 }
 .footer {
     background-color: #eee;
-    height: 20vh;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .footer img {
+        max-width: 400px;
+    }
+}
+@media (max-width: 767px) {
+    .footer img {
+        max-width: 300px;
+    }
+    .jumbotron h1 {
+        font-size: 30px;
+        margin-bottom: 3px;
+    }
+    .jumbotron p {
+        font-size: 16px;
+    }
+    .jumbotron .glyphicon-file {
+        font-size: 60px;
+    }
 }
