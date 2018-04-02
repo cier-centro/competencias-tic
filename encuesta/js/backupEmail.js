@@ -1,4 +1,4 @@
-
+//https://docs.google.com/forms/d/e/1FAIpQLSckfMr2zjvGo08e9pPAE1iZ8vQnQc1poZPXRIS6oNIt-an4eA/viewform?usp=pp_url&entry.26647293=Daza&entry.1902537249=3213213&entry.1765249514=ydaza@gitei.edu.co&entry.618703803=Hombre&entry.781656536=21+-+30&entry.805018916=Todas+las+asignaturas&entry.1886189987=B%C3%A1sica+secundaria&entry.1785351721=Aprobado&entry.2055329056=Decreto+1278+de+2002&entry.2057563961=Cmarca&entry.1229277571=Idei&entry.1444558031=1&entry.1026490934=2&entry.269129317=1&entry.1298042726=0&entry.134131095=1&entry.965515678=1&entry.1156841145=0&entry.1364704044=1&entry.1109956124=1&entry.643628948=2&entry.1188526696=2&entry.945005970=1&entry.1205006325=2&entry.975896223=2&entry.1809757995=2&entry.15588726=2&entry.1895296045=2&entry.1180829362=1&entry.1722097493=1&entry.1409288934=2&entry.1932445958=2&entry.2730175=1&entry.1772354376=1&entry.1020106168=2&entry.1323187994=2&entry.750359508=1&entry.1756700184=1&entry.886186224=2&entry.2104735137=1&entry.326826978=2&entry.897728948=1&entry.221005505=2&entry.2014094651=1&entry.57310449=2&entry.132293132=1&entry.1674161771=2&entry.100476736=1&entry.68444739=2&entry.879669428=2&entry.1348118598=1&entry.1893795485=1&entry.1914131614=2&entry.1658491068=2&entry.1362498238=1&entry.291784763=1&entry.389150359=2&entry.1678963136=2&entry.709887415=1&entry.296108911=2&entry.23575497=1&entry.1640455716=2&entry.543150211=2&entry.991620359=2&entry.1011297224=1&entry.97989396=2&entry.2132279693=2&entry.1152401402=2&entry.1333687825=2&entry.2025947001=1&entry.1760324324=2&entry.1457147085=2&entry.1977251599=2&entry.864560536=1&entry.1454866104=2&entry.1831711108=2&entry.779870544=2&entry.1980468116=1&entry.405603422=2&entry.759214817=2&entry.475436336=2&entry.1577749116=1&entry.867166008=2&entry.300015365=2&entry.1412961250=2&entry.1890098527=1&entry.409643532=2&entry.1053947480=2&entry.1048383661=2&entry.1459922221=1&entry.1811410652=1&entry.63849312=2&entry.53343516=2&entry.1968572966=1&entry.757653363=2&entry.852040138=2&entry.464214423=1&entry.95799373=2&entry.2095612640=2&entry.1157334871=1&entry.1288255243=1
 
 function onFormSubmit(e) {
   var sheet = SpreadsheetApp.getActiveSheet();
@@ -72,7 +72,11 @@ function onFormSubmit(e) {
 
   var url = "https://cier-centro.github.io/competencias-tic/" + params;
   var giteiUrl = "http://www.gitei.edu.co/";
-  var footerImageUrl = giteiUrl + "competencias-tic/encuesta/img/giunal.png";
+  var unalUrl = "http://unal.edu.co/";
+  var giteiLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_gitei.png";
+  var unalLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_unal.png";
+  var separatorLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_separator.png";
+  var mailBody;
 
   var graphUrl='https://chart.googleapis.com/chart?cht=r&chs=500x500&chd=t:72,72,72,72,72,72%7C60,60,60,60,60,60%7C36,36,36,36,36,36%7C'+(consolidated['tec']*2)+','+(consolidated['ped']*2)+','+(consolidated['com']*2)+','+(consolidated['ges']*2)+','+(consolidated['inv']*2)+','+(consolidated['tec']*2)+'&chco=97CBEF30,6F9ED380,0036FFA0,FF9900&chls=1.0,1.0,0.0%7C1.0,1.0,0.0%7C1.0,1.0,0.0%7C2.0,4.0,0.0&chxt=x&chxl=0:%7CTecnol%C3%B3gica%7CPedag%C3%B3gica%7CComunicativa%7CGesti%C3%B3n%7CInvestigativa&chm=B,97CBEF30,0,1.0,5.0%7CB,6F9ED380,1,1.0,5.0%7CB,0036FFA0,2,1.0,5.0%7CB,FF9900C0,3,1.0,5.0&chdlp=t&chdl=Innovador|Integrador|Explorador|'+name;
   Logger.log('La url esta bien!');
@@ -82,7 +86,15 @@ function onFormSubmit(e) {
 
   //https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
   //MailApp.sendEmail(email, "fuuuu", message,{htmlbody:htmlEmail});
-  MailApp.sendEmail(email, "Evaluación competencias TIC", message,{htmlBody: 'Hola \nEl resultado de tu prueba <br><br> <img src='+graphUrl+'><br><br>'+ table+'<br><br> tambien estan disponibles <a href=' + url + '>AQUI</a>'+'<br><br><a href="'+ giteiUrl + '"><img src=' + footerImageUrl + '></a>'});
+
+  mailBody = 'Hola \nEl resultado de tu prueba <br><br>';
+  mailBody += '<img src='+ graphUrl +'><br><br>';
+  mailBody += table + '<br><br>';
+  mailBody += 'También estan disponibles <a href=' + url + '>AQUI</a><br><br>';
+  mailBody += '<a href="'+ giteiUrl + '"><img src=' + giteiLogoUrl + '></a>';
+  mailBody += '<img src=' + separatorLogoUrl + '>';
+  mailBody += '<a href="'+ unalUrl + '"><img src=' + unalLogoUrl + '></a>';
+  MailApp.sendEmail(email, "Evaluación competencias TIC", message,{htmlBody: mailBody});
 
 }
 
