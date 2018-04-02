@@ -50,22 +50,25 @@ function onFormSubmit(e) {
 
 
   //yes... you can concatenate all in the same lines, but it's more readable
-  var table="<table border=\"1\"><tr><th>Compentencia</th><th>Categoria</th><th>Cualitativo</th><th>Cuantitativo</th></tr>";
+  var tableStyle = "border=\"1\" style=\"border-collapse: collapse; border: 1px solid lightgray;\"";
+  var thStyle = "style=\"padding: 15px; font-size: 14px; background: gray; color: white;\"";
+  var tdStyle = "style=\"padding: 15px;\"";
+  var table="<table "+ tableStyle + "><tr><th "+ thStyle + ">Competencia</th><th "+ thStyle + ">Categoria</th><th "+ thStyle + ">Cualitativo</th><th "+ thStyle + ">Cuantitativo</th></tr>";
 
   for (var key in categoriesIndices) {
     var temp=key.toLowerCase().substring(0,3);
     table=table+"<tr>";
-    table=table+"<td>"+key+"</td>";
+    table=table+"<td "+ tdStyle + ">"+key+"</td>";
     if(parseInt(consolidated[temp])<=18){
-      table=table+"<td>Explorador</td><td>"+messages[key][0]+"</td>";
+      table=table+"<td "+ tdStyle + ">Explorador</td><td "+ tdStyle + ">"+messages[key][0]+"</td>";
     }else {
       if(parseInt(consolidated[temp])>30){
-        table=table+"<td>Innovador</td><td>"+messages[key][1]+"</td>";
+        table=table+"<td "+ tdStyle + ">Innovador</td><td "+ tdStyle + ">"+messages[key][1]+"</td>";
       } else{
-        table=table+"<td>Integrador</td><td>"+messages[key][2]+"</td>";
+        table=table+"<td "+ tdStyle + ">Integrador</td><td "+ tdStyle + ">"+messages[key][2]+"</td>";
       }
     }
-    table=table+"<td>"+consolidated[temp]+"</td></tr>";
+    table=table+"<td "+ tdStyle + ">"+consolidated[temp]+"</td></tr>";
   }
   table=table+"</table>";
 
@@ -86,16 +89,15 @@ function onFormSubmit(e) {
 
   //https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
   //MailApp.sendEmail(email, "fuuuu", message,{htmlbody:htmlEmail});
-
-  mailBody = 'Hola \nEl resultado de tu prueba <br><br>';
+  mailBody = "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">";
+  mailBody += 'Hola \nEl resultado de tu prueba <br><br>';
   mailBody += '<img src='+ graphUrl +'><br><br>';
   mailBody += table + '<br><br>';
   mailBody += 'También estan disponibles <a href=' + url + '>AQUI</a><br><br>';
-  mailBody += '<a href="'+ giteiUrl + '"><img src=' + giteiLogoUrl + '></a>';
+  mailBody += '<a href="'+ giteiUrl + '"><img style="width: 49%; max-width: 264px;" src=' + giteiLogoUrl + '></a>';
   mailBody += '<img src=' + separatorLogoUrl + '>';
-  mailBody += '<a href="'+ unalUrl + '"><img src=' + unalLogoUrl + '></a>';
+  mailBody += '<a href="'+ unalUrl + '"><img style="width: 49%; max-width: 204px;" src=' + unalLogoUrl + '></a>';
   MailApp.sendEmail(email, "Evaluación competencias TIC", message,{htmlBody: mailBody});
-
 }
 
  function loadJSFromHTMLFile() {
