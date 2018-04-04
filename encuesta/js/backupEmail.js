@@ -73,7 +73,7 @@ function onFormSubmit(e) {
   table=table+"</table>";
 
 
-  var url = "https://cier-centro.github.io/competencias-tic/" + params;
+  var url = "http://www.gitei.edu.co/competencias-tic/" + params;
   var giteiUrl = "http://www.gitei.edu.co/";
   var unalUrl = "http://unal.edu.co/";
   var giteiLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_gitei.png";
