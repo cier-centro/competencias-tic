@@ -95,8 +95,8 @@ function onFormSubmit(e) {
   mailBody += table + '<br><br>';
   mailBody += 'También estan disponibles <a href=' + url + '>AQUI</a><br><br>';
   mailBody += '<a href="'+ giteiUrl + '"><img style="width: 49%; max-width: 264px;" src=' + giteiLogoUrl + '></a>';
-  mailBody += '<img src=' + separatorLogoUrl + '>';
-  mailBody += '<a href="'+ unalUrl + '"><img style="width: 49%; max-width: 204px;" src=' + unalLogoUrl + '></a>';
+  mailBody += '<img style="width: 0.555%; max-width: 3px;" src=' + separatorLogoUrl + '>';
+  mailBody += '<a href="'+ unalUrl + '"><img style="width: 38%; max-width: 204px;" src=' + unalLogoUrl + '></a>';
   MailApp.sendEmail(email, "Evaluación competencias TIC", message,{htmlBody: mailBody});
 }
 

@@ -1,7 +1,13 @@
-h1 {
+.header {
+    position: relative !important;
+}
+.container-fluid {
+    height: auto !important;
+}
+.title-container {
     margin-top: 50px;
 }
-.btn-info {
+.btn-print {
     margin-bottom: 50px;
 }
 /*.row {
@@ -22,6 +28,14 @@ h1 {
 @media print {
     .canvas-container {
         padding: 0 150% 0 15%;
+    }
+    .page-header {
+        page-break-before: always;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
 @media (min-width: 768px) {

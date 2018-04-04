@@ -11,120 +11,17 @@
   <script src="js/index.js"></script>
 </head>
 <body>
-    <div class="header">
-        <div class="jumbotron">
-            <div class="left-section">
-                <span class="glyphicon glyphicon-file"></span>
-                <div>
-                    <h1>Encuesta</h1>
-                    <p>Instrumento Competencias TIC</p>
-                </div>
-            </div>
-            <button type="button" class="btn btn-info btn-lg btn-help pull-right" data-toggle="modal" data-target="#myModal">
-                <span class="glyphicon glyphicon-question-sign"></span>
-            </button>
-        </div>
-    </div>
+    <div class="header" w3-include-html="header.html"></div>
     <div class="container-fluid">
         <div class="row form-container">
            <iframe class="form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSckfMr2zjvGo08e9pPAE1iZ8vQnQc1poZPXRIS6oNIt-an4eA/viewform?embedded=true">
            </iframe>
         </div>
     </div>
-    <div class="footer">
-        <img src="img/giunal.png" class="img-responsive" alt="Logo GITEI">
-    </div>
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Ayuda</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                          <table class="table table-bordered">
-                              <thead>
-                                <tr>
-                                  <th>Competencia</th>
-                                  <th>Nivel</th>
-                                  <th>Descripción</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td rowspan="3">Tecnológica</td>
-                                  <td>Explorador</td>
-                                  <td>Reconoce un amplio espectro de herramientas tecnológicas y algunas formas de integrarlas a la práctica educativa.</td>
-                                </tr>
-                                <tr>
-                                  <td>Integrador</td>
-                                  <td>Utiliza diversas herramientas tecnológicas en los procesos educativos, de acuerdo a su rol, área de formación, nivel y contexto en el que se desempeña.</td>
-                                </tr>
-                                <tr>
-                                  <td>Innovador</td>
-                                  <td>Aplica el conocimiento de una amplia variedad de tecnologías en el diseño de ambientes de aprendizaje innovadores y para plantear soluciones a problemas identificados en el contexto</td>
-                                </tr>
-                                <tr>
-                                  <td rowspan="3">Tecnológica</td>
-                                  <td>Explorador</td>
-                                  <td>Identifica nuevas estrategias y metodologías mediadas por las TIC, como herramienta para su desempeño profesional.</td>
-                                </tr>
-                                <tr>
-                                  <td>Integrador</td>
-                                  <td>Propone proyectos y estrategias de aprendizaje con el uso de TIC para potenciar el aprendizaje de los estudiantes.</td>
-                                </tr>
-                                <tr>
-                                  <td>Innovador</td>
-                                  <td>Lidera experiencias significativas que involucran ambientes de aprendizaje diferenciados de acuerdo a las necesidades e intereses propios y de los estudiantes.</td>
-                                </tr>
-                                <tr>
-                                  <td rowspan="3">Comunicativa</td>
-                                  <td>Explorador</td>
-                                  <td>Emplea diversos canales y lenguajes propios de las TIC para comunicarse con la comunidad educativa.</td>
-                                </tr>
-                                <tr>
-                                  <td>Integrador</td>
-                                  <td>Desarrolla estrategias de trabajo colaborativo en el contexto escolar a partir de su participación en redes y comunidades con el uso de las TIC.</td>
-                                </tr>
-                                <tr>
-                                  <td>Innovador</td>
-                                  <td>Participa en comunidades y publica sus producciones textuales en diversos espacios virtuales y a través de múltiples medios digitales, usando los lenguajes que posibilitan las TIC.</td>
-                                </tr>
-                                <tr>
-                                  <td rowspan="3">Gestión</td>
-                                  <td>Explorador</td>
-                                  <td>Organiza actividades propias de su quehacer profesional con el uso de las TIC.</td>
-                                </tr>
-                                <tr>
-                                  <td>Integrador</td>
-                                  <td>Integra las TIC en procesos de dinamización de las gestiones directiva, académica, administrativa y comunitaria de su institución.</td>
-                                </tr>
-                                <tr>
-                                  <td>Innovador</td>
-                                  <td>Propone y lidera acciones para optimizar procesos integrados de la gestión escolar.</td>
-                                </tr>
-                                <tr>
-                                  <td rowspan="3">Investigativa</td>
-                                  <td>Explorador</td>
-                                  <td>Usa las TIC para hacer registro y seguimiento de lo que vive y observa en su práctica, su contexto y el de sus estudiantes.</td>
-                                </tr>
-                                <tr>
-                                  <td>Integrador</td>
-                                  <td>Lidera proyectos de investigación propia y con sus estudiantes.</td>
-                                </tr>
-                                <tr>
-                                  <td>Innovador</td>
-                                  <td>Construye estrategias educativas innovadoras que incluyen la generación colectiva de conocimientos.</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                        </table>
-                    </div>
-                </div>
-            </div>
-          </div>
-      </div>
+    <div class="footer" w3-include-html="footer.html"></div>
+    <div class="modal fade" id="myModal" role="dialog" w3-include-html="modal.html"></div>
+    <script>
+        includeHTML();
+    </script>
 </body>
 </html>
