@@ -40,6 +40,12 @@
     font-size: 80px;
     margin-right: 30px;
 }
+.logo-cpe-white {
+    position: absolute;
+    top: 6.5vh;
+    width: 180px;
+    left: 4vw;
+}
 .survey-header .jumbotron {
     height: 20vh;
     justify-content: center;
@@ -55,6 +61,13 @@
     align-items: center;
     justify-content: center;
 }
+.footer .logo-cpe-blue, .footer .logo-gitei, .footer .logo-unal {
+    max-width: 200px;
+}
+.first-separator, .second-separator {
+    margin: 0 1vw;
+    max-width: 2.5px;
+}
 .btn-help {
     padding: 5px;
     background-color: #00c5ff;
@@ -68,28 +81,51 @@
 .table td[rowspan] {
     vertical-align: middle !important;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
     .survey-header .jumbotron {
-        padding-top: 48px;
+        padding-top: 40px;
         align-items: baseline;
     }
     .survey-header .btn-help {
-        top: 48px;
+        top: 40px;
     }
 }
-@media (min-width: 768px) and (max-width: 1399px) {
+@media (min-width: 768px) and (max-width: 1599px) {
     .survey-header .jumbotron {
-        padding-top: 2.5vw;
+        padding-top: 2vw;
         align-items: baseline;
     }
     .survey-header .btn-help {
-        top: 2.5vw;
+        top: 2vw;
+    }
+}
+@media (min-width: 1060px) {
+    .survey-header .jumbotron {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+    .logo-cpe-blue, .first-separator {
+        display: none;
+    }
+}
+@media (max-width: 1059px) {
+    .logo-cpe-white {
+        display: none;
+    }
+    .footer .logo-cpe-blue, .footer .logo-gitei, .footer .logo-unal {
+        width: 30vw;
+    }
+    .first-separator, .second-separator {
+        width: 0.45vw;
+    }
+}
+@media (min-width: 768px) and (max-width: 1059px) {
+      .survey-header .jumbotron {
+        padding-left: 10vw;
+        padding-right: 10vw;
     }
 }
 @media (min-width: 768px) {
-    .footer img {
-        max-width: 400px;
-    }
     .survey-header .jumbotron h1 {
         font-size: 40px;
         margin-top: 0;
@@ -108,9 +144,6 @@
     }
 }
 @media (max-width: 767px) {
-    .footer img {
-        max-width: 300px;
-    }
     .jumbotron h1 {
         font-size: 30px;
         margin-bottom: 3px;
