@@ -126,6 +126,9 @@
     }
 }
 @media (min-width: 768px) {
+    .survey-header .jumbotron {
+        min-height: 200px;
+    }
     .survey-header .jumbotron h1 {
         font-size: 40px;
         margin-top: 0;
