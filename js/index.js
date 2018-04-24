@@ -9,13 +9,21 @@ window.onload = function(){
                 getUrlParameter("ges"),
                 getUrlParameter("inv")]
     }
-    var tableLabels = ["Competencia", "Nivel", "Valor numérico"];
+    var tableLabels = ["Competencia", "Nivel", "Descriptor de la competencia", "Valor numérico"];
     var competencesLabels = ["Tecnológica", "Pedagógica", "Comunicativa", "Gestión", "Investigativa"];
     var competenceLevelLabels = ["Innovador", "Integrador", "Explorador"];
+	var messages={
+        "Tecnológica": ["Reconoce un amplio espectro de herramientas tecnológicas y algunas formas de integrarlas a la práctica educativa.", "Aplica el conocimiento de una amplia variedad de tecnologías en el diseño de ambientes de aprendizaje innovadores y para plantear soluciones a problemas identificados en el contexto.", "Utiliza diversas herramientas tecnológicas en los procesos educativos, de acuerdo a su rol, área de formación, nivel y contexto en el que se desempeña."],
+        "Pedagógica": ["Identifica nuevas estrategias y metodologías mediadas por las TIC, como herramienta para desempeño profesional.", "Lidera experiencias significativas que involucran ambientes de aprendizaje diferenciados de acuerdo a las necesidades e intereses propias y de los estudiantes.", "Propone proyectos y estrategias de aprendizaje con el uso de TIC para potenciar el aprendizaje de los estudiantes." ],
+        "Comunicativa": ["Emplea diversos canales y lenguajes propios de las TIC para comunicarse con la comunidad educativa.", "Participa en comunidades y publica sus producciones textuales en diversos espacios virtuales y a través de múltiples medios digitales, usando los lenguajes que posibilitan las TIC.", "Desarrolla estrategias de trabajo colaborativo en el contexto escolar a partir de su participación en redes y comunidades con el uso de las TIC."],
+        "Gestión": ["Organiza actividades propias de su quehacer profesional con el uso de las TIC.", "Propone y lidera acciones para optimizar procesos integrados de la gestión escolar.", "Integra las TIC en procesos de dinamización de las gestiones directiva, académica, administrativa y comunitaria de su institución." ],
+        "Investigativa": ["Usa las TIC para hacer registro y seguimiento de lo que vive y observa en su práctica, su contexto y el de sus estudiantes.", "Construye estrategias educativas innovadoras que incluyen la generación colectiva de conocimientos.", "Lidera proyectos de investigación propia y con sus estudiantes."],
+    }
     var graphicContainer = document.getElementById("radar-chart");
     var myRadarChart = createChart();
     putTeacherName();
     createTeacherTable();
+	
 
     function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -84,6 +92,8 @@ window.onload = function(){
         }
         return tbody;
     }
+	
+	
     function getColumnLabel(column, row) {
       var label;
       switch (column) {
@@ -94,6 +104,9 @@ window.onload = function(){
               label = getCompetenceLevel(teacherData.results[row]);
               break;
           case 2:
+			  label=getDescriptor(competencesLabels[row],teacherData.results[row]);
+			  break;
+		  case 3:
               label = teacherData.results[row];
               break;
           default:
@@ -101,9 +114,24 @@ window.onload = function(){
       }
       return label;
     }
+	
+	function getDescriptor(key,score){
+		if((score >= 0) && (score <= 18)){
+			return messages[key][2];
+		}
+		if((score > 18 ) && (score <= 30)){
+			return messages[key][1];
+		}
+		if((score >= 30) && (score <= 36)){
+			return messages[key][0];
+		}
+		return "Fuera de Rango";
+	}
+	
     function getCompetenceLevel(score) {
         return ((score >= 0) && (score <= 18))? competenceLevelLabels[2]: ((score > 18 ) && (score <= 30))? competenceLevelLabels[1] : ((score >= 30) && (score <= 36))? competenceLevelLabels[0] : "Fuera de Rango";
     }
+	
     function createChart() {
       return new Chart(graphicContainer, {
         type: 'radar',
