@@ -29,7 +29,7 @@
     .canvas-container {
         padding: 0 150% 0 15%;
     }
-    .page-header {
+    .page-header, .panel-integrator {
         page-break-before: always;
     }
     .footer {
@@ -37,6 +37,16 @@
         bottom: 0;
         width: 100%;
     }
+    .survey-header, .first-separator, .second-separator {
+        display: none;
+    }
+    a[href]:after {
+        content: none !important;
+    }
+}
+@page {
+    margin-top: 1.5cm !important;
+    margin-bottom: 1.5cm !important;
 }
 @media (min-width: 768px) {
     .canvas-container {

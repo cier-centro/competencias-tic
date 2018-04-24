@@ -17,7 +17,7 @@
     <div class="header survey-header" w3-include-html="encuesta/survey_header.html"></div>
     <div class="container-fluid">
         <div class="container">
-            <h1 class="title-container">Resultados de la prueba</h1>
+            <h1 class="title-container">Informe de la prueba</h1>
             <div class="row">
                <div class="canvas-container">
                   <canvas id="radar-chart"></canvas>
@@ -28,29 +28,49 @@
             </div>
             <div id="teacher-data" class="table-responsive">
             </div>
-			<div>
-				<br></br>
-				<p>Las siguientes son recomendaciones generales que le permitirán guiar su proceso de desarrollo profesional para innovar su práctica educativa con uso de TIC, así como la invitación para adoptar estrategias que le permitan fortalecer dichas competencias desde su contexto escolar.</p>
-				<p><b>Nivel Explorador:</b> Estar en este nivel significa que ha decidido indagar en el uso de tecnologías en sus procesos de aula y es sin duda el principal punto de partida. Le recomendamos lo siguiente:</p>
-				<ol>
-					<li>Aproveche las TIC para aprender por iniciativa personal y/o actualizarse en su área de conocimiento</li>
-					<li>Incluya en sus actividades de aprendizaje herramientas TIC, medios audiovisuales, contenidos digitales, como por ejemplo, aquellos que se encuentran disponibles en el Portal Colombia Aprende</li>
-					<li>Indague diferentes metodologías innovadoras en el aula que incluyan el uso de las TIC e implemente la que mejor se adapte a su contexto escolar.</li>
-				</ol>
-				<p><b>Nivel Integrador:</b> Estar en este nivel significa que ha llevado a cabo procesos educativos en los que hace uso de las TIC y genera con ellas actividades con objetivos específicos. Le recomendamos lo siguiente:</p>
-				<ol>
-					<li>Implemente en sus actividades de aula, metodologías innovadoras que promuevan entre los estudiantes el aprendizaje autónomo y colaborativo con uso de TIC.</li>
-					<li>Diseñe y documente una actividad de aprendizaje que incluya contenidos digitales u objetos virtuales de aprendizaje haciendo uso de las TIC.</li>
-					<li>Publique los resultados de la actividad en portales académicos, blogs, comunidades de práctica, y esté abierto a la retroalimentación que reciba de ello.</li>
-				</ol>
-				<p><b>Nivel innovador:</b> Lograr el nivel innovador significa que ha usado las TIC para crear, expresar sus ideas y construir colectivamente nuevos conocimientos, incluyendo estrategias novedosas para reconfigurar su práctica educativa. Le recomendamos lo siguiente:</p>
-				<ol>
-					<li>Proponga proyectos educativos mediados con TIC, que promuevan la producción de nuevo conocimiento.</li>
-					<li>Diseñe ambientes de aprendizaje mediados por las TIC, teniendo en cuenta las características propias de sus estudiantes, para fortalecer el desarrollo de las diferentes competencias.</li>
-					<li>Documente los resultados obtenidos, construyendo material que le permita participar en diferentes escenarios nacionales e internacionales compartiendo su experiencia pedagógica con uso de TIC.</li>
-				</ol>
-			</div>
-            <button type="button" class="btn btn-info btn-print hidden-print pull-right" onclick="printPage()">Guardar PDF</button>
+    				<br></br>
+    				<p>Las siguientes son recomendaciones generales que le permitirán guiar su proceso de desarrollo profesional para innovar su práctica educativa con uso de TIC, así como la invitación para adoptar estrategias que le permitan fortalecer dichas competencias desde su contexto escolar.</p>
+            <br>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nivel Explorador</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Estar en este nivel significa que ha decidido indagar en el uso de tecnologías en sus procesos de aula y es sin duda el principal punto de partida. Le recomendamos lo siguiente:</p>
+                    <ol>
+                        <li>Aproveche las TIC para aprender por iniciativa personal y/o actualizarse en su área de conocimiento</li>
+                        <li>Incluya en sus actividades de aprendizaje herramientas TIC, medios audiovisuales, contenidos digitales, como por ejemplo, aquellos que se encuentran disponibles en el Portal Colombia Aprende</li>
+                        <li>Indague diferentes metodologías innovadoras en el aula que incluyan el uso de las TIC e implemente la que mejor se adapte a su contexto escolar.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="panel panel-info panel-integrator">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nivel Integrador</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Estar en este nivel significa que ha llevado a cabo procesos educativos en los que hace uso de las TIC y genera con ellas actividades con objetivos específicos. Le recomendamos lo siguiente:</p>
+                    <ol>
+                        <li>Implemente en sus actividades de aula, metodologías innovadoras que promuevan entre los estudiantes el aprendizaje autónomo y colaborativo con uso de TIC.</li>
+                        <li>Diseñe y documente una actividad de aprendizaje que incluya contenidos digitales u objetos virtuales de aprendizaje haciendo uso de las TIC.</li>
+                        <li>Publique los resultados de la actividad en portales académicos, blogs, comunidades de práctica, y esté abierto a la retroalimentación que reciba de ello.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Nivel Innovador</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Lograr el nivel innovador significa que ha usado las TIC para crear, expresar sus ideas y construir colectivamente nuevos conocimientos, incluyendo estrategias novedosas para reconfigurar su práctica educativa. Le recomendamos lo siguiente:</p>
+                    <ol>
+                        <li>Proponga proyectos educativos mediados con TIC, que promuevan la producción de nuevo conocimiento.</li>
+                        <li>Diseñe ambientes de aprendizaje mediados por las TIC, teniendo en cuenta las características propias de sus estudiantes, para fortalecer el desarrollo de las diferentes competencias.</li>
+                        <li>Documente los resultados obtenidos, construyendo material que le permita participar en diferentes escenarios nacionales e internacionales compartiendo su experiencia pedagógica con uso de TIC.</li>
+                    </ol>
+                </div>
+            </div>
+                <button type="button" class="btn btn-info btn-print hidden-print pull-right" onclick="printPage()">Guardar PDF</button>
         </div>
     </div>
     <div class="footer" w3-include-html="encuesta/footer.html"></div>
