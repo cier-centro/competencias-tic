@@ -1,0 +1,181 @@
+.header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+}
+.form-iframe, .form-container {
+    width: 100%;
+    border: none;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.container-fluid {
+    height: 85vh;
+    position: relative;
+    padding: 0;
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.13);
+}
+.jumbotron {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin: 0;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 62, 116, 0.8);
+}
+.jumbotron .left-section {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.jumbotron .glyphicon-file {
+    font-size: 80px;
+    margin-right: 30px;
+}
+.logo-cpe-white {
+    position: absolute;
+    top: 6.5vh;
+    width: 180px;
+    left: 4vw;
+}
+.survey-header .jumbotron {
+    height: 20vh;
+    justify-content: center;
+}
+.survey-header .jumbotron p,
+.survey-header .jumbotron label {
+    line-height: 100%;
+}
+.footer {
+    background-color: white;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .logo-cpe-blue, .footer .logo-gitei, .footer .logo-unal {
+    max-width: 200px;
+}
+.first-separator, .second-separator {
+    margin: 0 1vw;
+    max-width: 2.5px;
+}
+.btn-help {
+    padding: 5px;
+    background-color: #00c5ff;
+}
+.btn-help .glyphicon-question-sign {
+    font-size: 32px;
+}
+.table td {
+    white-space: normal !important;
+}
+.table td[rowspan] {
+    vertical-align: middle !important;
+}
+@media (min-width: 1600px) {
+    .survey-header .jumbotron {
+        padding-top: 40px;
+        align-items: baseline;
+    }
+    .survey-header .btn-help {
+        top: 40px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1599px) {
+    .survey-header .jumbotron {
+        padding-top: 2vw;
+        align-items: baseline;
+    }
+    .survey-header .btn-help {
+        top: 2vw;
+    }
+}
+@media (min-width: 1060px) {
+    .survey-header .jumbotron {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+    .logo-cpe-blue, .first-separator {
+        display: none;
+    }
+}
+@media (max-width: 1059px) {
+    .logo-cpe-white {
+        display: none;
+    }
+    .footer .logo-cpe-blue, .footer .logo-gitei, .footer .logo-unal {
+        width: 30vw;
+    }
+    .first-separator, .second-separator {
+        width: 0.45vw;
+    }
+}
+@media (min-width: 768px) and (max-width: 1059px) {
+      .survey-header .jumbotron {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
+@media (min-width: 768px) {
+    .survey-header .jumbotron {
+        min-height: 200px;
+    }
+    .survey-header .jumbotron h1 {
+        font-size: 40px;
+        margin-top: 0;
+    }
+    .survey-header .jumbotron p {
+        font-size: 20px;
+    }
+    .survey-header .jumbotron label {
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0;
+    }
+    .survey-header .btn-help {
+        position: absolute;
+        right: 4vw;
+    }
+}
+@media (max-width: 767px) {
+    .jumbotron h1 {
+        font-size: 30px;
+        margin-bottom: 3px;
+    }
+    .jumbotron p {
+        font-size: 16px;
+    }
+    .jumbotron .glyphicon-file {
+        font-size: 60px;
+    }
+    .survey-header .jumbotron {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    .survey-header .jumbotron h1 {
+        font-size: 20px;
+        margin: 0;
+    }
+    .survey-header .jumbotron p {
+        font-size: 13px;
+        margin: 10px 0;
+    }
+    .survey-header .jumbotron label {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+    }
+    .form-iframe {
+        padding-top: 11vw;
+        background: #eeefef;
+    }
+}
