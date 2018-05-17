@@ -22,7 +22,7 @@ function onFormSubmit(e) {
         "Investigativa": [59, 80, 6, 84, 21, 40, 45, 53, 63, 76, 68, 74, 16, 70, 56, 66, 43, 50],
     }
 
-   var messages={
+  var messages={
         "Tecnologica": ["Reconoce un amplio espectro de herramientas tecnológicas y algunas formas de integrarlas a la práctica educativa.", "Aplica el conocimiento de una amplia variedad de tecnologías en el diseño de ambientes de aprendizaje innovadores y para plantear soluciones a problemas identificados en el contexto.", "Utiliza diversas herramientas tecnológicas en los procesos educativos, de acuerdo a su rol, área de formación, nivel y contexto en el que se desempeña."],
         "Pedagógica": ["Identifica nuevas estrategias y metodologías mediadas por las TIC, como herramienta para desempeño profesional.", "Lidera experiencias significativas que involucran ambientes de aprendizaje diferenciados de acuerdo a las necesidades e intereses propias y de los estudiantes.", "Propone proyectos y estrategias de aprendizaje con el uso de TIC para potenciar el aprendizaje de los estudiantes." ],
         "Comunicativa": ["Emplea diversos canales y lenguajes propios de las TIC para comunicarse con la comunidad educativa.", "Participa en comunidades y publica sus producciones textuales en diversos espacios virtuales y a través de múltiples medios digitales, usando los lenguajes que posibilitan las TIC.", "Desarrolla estrategias de trabajo colaborativo en el contexto escolar a partir de su participación en redes y comunidades con el uso de las TIC."],
@@ -81,15 +81,16 @@ function onFormSubmit(e) {
   table=table+"</table>";
 
 
-  var url = "http://www.gitei.edu.co/competencias-tic/" + params;
+  var url = "http://apps.cpe.gov.co/competencias-tic/" + params;
+  var siteImagesUrl = "http://apps.cpe.gov.co/";
   var giteiUrl = "http://www.gitei.edu.co/";
   var unalUrl = "http://unal.edu.co/";
-  var giteiLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_gitei.png";
-  var unalLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_unal.png";
-  var separatorLogoUrl = giteiUrl + "competencias-tic/encuesta/img/logo_separator.png";
+  var giteiLogoUrl = siteImagesUrl + "competencias-tic/encuesta/img/logo_gitei.png";
+  var unalLogoUrl = siteImagesUrl + "competencias-tic/encuesta/img/logo_unal.png";
+  var separatorLogoUrl = siteImagesUrl + "competencias-tic/encuesta/img/logo_separator.png";
   var mailBody;
   var subjectBody = "Realimentación Auto-Reporte: Instrumento de Competencias TIC para el desarrollo profesional docente";
-  var introductoryText = 'Apreciado docente/directivo docente ' + name + ': Ha recibido el resultado del Auto reporte: Instrumento de Competencias TIC para el desarrollo profesional docente. A continuación encontrará su resultado y algunas recomendaciones basadas en las competencias TIC y el nivel de desempeño. Recuerde, la formación en estas competencias es fundamental para su desarrollo profesional.';
+  var introductoryText = 'Apreciado docente/directivo ' + name + ': Ha recibido el resultado del Auto reporte: Instrumento de Competencias TIC para el desarrollo profesional docente. A continuación encontrará su resultado y algunas recomendaciones basadas en las competencias TIC y el nivel de desempeño. Recuerde, la formación en estas competencias es fundamental para su desarrollo profesional.';
   var ratingScale = '<b>*Escala de valoración</b><br>0-18: Nivel Explorador<br>19-30: Nivel Integrador<br>31-36: Nivel Innovador';
   var feedbackInfo = '<p>Las siguientes son recomendaciones generales que le permitirán guiar su proceso de desarrollo profesional para innovar su práctica educativa con uso de TIC, así como la invitación para adoptar estrategias que le permitan fortalecer dichas competencias desde su contexto escolar.</p>';
   var explorerInfo = '<p><b>Nivel Explorador:</b> Estar en este nivel significa que ha decidido indagar en el uso de tecnologías en sus procesos de aula y es sin duda el principal punto de partida. Le recomendamos lo siguiente:</p><ol><li>Aproveche las TIC para aprender por iniciativa personal y/o actualizarse en su área de conocimiento</li><li>Incluya en sus actividades de aprendizaje herramientas TIC, medios audiovisuales, contenidos digitales, como por ejemplo, aquellos que se encuentran disponibles en el Portal Colombia Aprende</li><li>Indague diferentes metodologías innovadoras en el aula que incluyan el uso de las TIC e implemente la que mejor se adapte a su contexto escolar.</li></ol>';
@@ -116,17 +117,13 @@ function onFormSubmit(e) {
   mailBody += explorerInfo;
   mailBody += integratorInfo;
   mailBody += innovatorInfo + '<br><br>';
-  mailBody += 'También están disponibles en el enlace <a href=' + url + '>RESULTADOS DE LA PRUEBA</a><br><br>';
+  mailBody += 'También están disponibles en el enlace <a href=' + url + '>INFORME DE LA PRUEBA</a><br><br>';
   mailBody += '<a href="'+ giteiUrl + '"><img style="width: 49%; max-width: 264px;" src=' + giteiLogoUrl + '></a>';
   mailBody += '<img style="width: 0.555%; max-width: 3px;" src=' + separatorLogoUrl + '>';
   mailBody += '<a href="'+ unalUrl + '"><img style="width: 38%; max-width: 204px;" src=' + unalLogoUrl + '></a>';
   MailApp.sendEmail(email, subjectBody , message,{htmlBody: mailBody});
 
 }
-
- function loadJSFromHTMLFile() {
-  eval(UrlFetchApp.fetch('https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js').getContentText());
- }
 
  function loadJSFromHTMLFile() {
   eval(UrlFetchApp.fetch('https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js').getContentText());
